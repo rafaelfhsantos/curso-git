@@ -1,4 +1,6 @@
-﻿using System;
+﻿using projetoTeste.Entities;
+using projetoTeste.Entities.Enums;
+using System;
 
 namespace projetoTeste
 {
@@ -6,13 +8,23 @@ namespace projetoTeste
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Order order = new Order
+            {
+                Id = 1080,
+                Moment = DateTime.Now,
+                Status = OrderStatus.PendingPayment
 
-            
+            };
 
-            Console.WriteLine("Como você está hoje?");
+            Console.WriteLine(order);
 
-            Console.WriteLine("Tenha um bom dia.");
+            string txt = OrderStatus.PendingPayment.ToString();
+
+            OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+
+            Console.WriteLine(os);
+
+            Console.WriteLine(txt);
         }
     }
 }
